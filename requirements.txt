@@ -1,0 +1,17 @@
+# strange-loop-engine — pinned dependencies for full reproducibility
+# Verified: Windows 11 Pro, Python 3.14.3, no GPU
+# Install: python -m pip install -r requirements.txt
+
+numpy==2.4.4
+scipy==1.17.1
+torch==2.11.0+cpu
+
+# Server (live frontend; not required for headless experiments)
+fastapi==0.136.0
+uvicorn==0.44.0
+websockets==16.0
+
+# Analysis & visualization
+matplotlib==3.10.9
+pandas==3.0.2
+networkx==3.6.1

@@ -1,0 +1,7 @@
+E8 TOXIC WORLD SUMMARY
+Seeds: 4, train=15000, test=8000
+
+FULL_FULL: toxic=0.522%±0.123%  eat=4.675% (n=4)
+FULL_LESION_MAP: toxic=0.559%±0.165%  eat=5.634% (n=4)
+NAIVE_FULL: toxic=0.553%±0.093%  eat=4.431% (n=4)
+NAIVE_LESION_MAP: toxic=0.538%±0.073%  eat=5.594% (n=4)

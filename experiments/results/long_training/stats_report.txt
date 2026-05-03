@@ -1,0 +1,38 @@
+============================================================================
+E6 LONG-TRAINING — Time Series Analysis (V2 81k brain)
+============================================================================
+Seeds: [1, 2, 3, 4] (4)  Logs per seed: 100  Steps total: 100000.0
+
+Learning curve (eats per log-bucket, mean across seeds):
+  bucket  t       eats/bucket
+    0     t=  2000  49.25 +- 7.18
+   12     t= 14000  58.75 +- 6.13
+   24     t= 26000  60.00 +- 6.98
+   36     t= 38000  63.50 +- 9.95
+   48     t= 50000  55.75 +- 8.96
+   60     t= 62000  50.50 +- 10.15
+   72     t= 74000  52.00 +- 5.23
+   84     t= 86000  54.25 +- 11.18
+   96     t= 98000  57.00 +- 7.16
+
+Paired t-tests (within-seed early vs late thirds):
+  cum_eats                  early=48.1667  late=48.2652  delta=+0.2%  t=+0.23  p=0.8343
+  mb_firing_rate            early=0.0114  late=0.0266  delta=+132.5%  t=+96.72  p=0.0000
+  mb_to_motor_w_mean        early=0.0651  late=0.2107  delta=+223.5%  t=+214.87  p=0.0000
+  mb_to_motor_w_max         early=0.9300  late=2.0000  delta=+115.1%  t=+34.32  p=0.0001
+  cx_to_motor_w_mean        early=0.2324  late=0.3765  delta=+62.0%  t=+42.92  p=0.0000
+  lh_to_motor_w_mean        early=0.2406  late=0.3845  delta=+59.8%  t=+47.28  p=0.0000
+  seg_to_motor_w_mean       early=0.1430  late=0.3925  delta=+174.5%  t=+100.95  p=0.0000
+  vis_to_mush_w_mean        early=0.0482  late=0.0719  delta=+49.0%  t=+202.75  p=0.0000
+  mb_w_self_mean            early=0.0736  late=0.0532  delta=-27.7%  t=-238.16  p=0.0000
+  mirror                    early=0.5731  late=0.5683  delta=-0.8%  t=-2.10  p=0.1261
+  awareness_idx             early=0.7925  late=0.8505  delta=+7.3%  t=+3.25  p=0.0475
+  collapse                  early=0.7600  late=0.7587  delta=-0.2%  t=-1.28  p=0.2891
+  presence                  early=0.9685  late=0.9680  delta=-0.1%  t=-0.55  p=0.6187
+
+=== H1 (E6): Cross-projection weight evolution ===
+  MB->motor      : start=0.04539  end=0.23712  growth=+422.4%  t=+199.64  p=0.0000  ***
+  CX->motor      : start=0.07141  end=0.38400  growth=+437.7%  t=+132.00  p=0.0000  ***
+  LH->motor      : start=0.08250  end=0.39203  growth=+375.2%  t=+226.14  p=0.0000  ***
+  SEG->motor     : start=0.04670  end=0.39817  growth=+752.7%  t=+355.69  p=0.0000  ***
+  Vis->mush      : start=0.04529  end=0.07802  growth=+72.3%  t=+273.80  p=0.0000  ***

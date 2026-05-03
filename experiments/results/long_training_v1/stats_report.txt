@@ -1,0 +1,30 @@
+============================================================================
+E6 LONG-TRAINING — Time Series Analysis (V2 81k brain)
+============================================================================
+Seeds: [1, 2, 3, 4] (4)  Logs per seed: 60  Steps total: 30000.0
+
+Learning curve (eats per log-bucket, mean across seeds):
+  bucket  t       eats/bucket
+    0     t=  1000  22.50 +- 5.45
+    7     t=  4500  28.75 +- 5.38
+   14     t=  8000  27.75 +- 4.03
+   21     t= 11500  22.75 +- 3.86
+   28     t= 15000  22.75 +- 6.85
+   35     t= 18500  22.00 +- 3.56
+   42     t= 22000  22.00 +- 9.09
+   49     t= 25500  32.00 +- 6.27
+   56     t= 29000  28.25 +- 4.19
+
+Paired t-tests (within-seed early vs late thirds):
+  cum_eats                  early=24.0921  late=23.8375  delta=-1.1%  t=-0.17  p=0.8756
+  mb_firing_rate            early=0.0094  late=0.0127  delta=+35.4%  t=+34.32  p=0.0001
+  mb_to_motor_w_mean        early=0.0481  late=0.0781  delta=+62.4%  t=+57.14  p=0.0000
+  mb_to_motor_w_max         early=0.3436  late=1.4470  delta=+321.1%  t=+14.12  p=0.0008
+  mb_w_self_mean            early=0.0779  late=0.0706  delta=-9.3%  t=-115.53  p=0.0000
+  mirror                    early=0.5696  late=0.5716  delta=+0.3%  t=+0.51  p=0.6479
+  awareness_idx             early=0.7386  late=0.8087  delta=+9.5%  t=+1.82  p=0.1662
+  collapse                  early=0.7553  late=0.7812  delta=+3.4%  t=+5.66  p=0.0109
+  presence                  early=0.9679  late=0.9673  delta=-0.1%  t=-1.19  p=0.3182
+
+=== H1 (E6): Did mushroom body engage with training? ===
+MB->motor weight: start=0.04524  end=0.08793  growth=+94.4%  paired t=+79.67  p=0.0000

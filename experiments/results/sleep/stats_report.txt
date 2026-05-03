@@ -1,0 +1,16 @@
+============================================================================
+E2 SLEEP EFFECT — Statistical Report
+============================================================================
+Conditions: ['WITH-SLEEP', 'NO-SLEEP'], n=30 per condition
+
+total_eats                     WITH=381.267+-18.684  NO=376.033+-21.395  delta=-1.4%  t=-1.01  p=0.3172  d=-0.26
+total_danger                   WITH=49.033+-8.680  NO=49.100+-7.485  delta=+0.1%  t=+0.03  p=0.9747  d=+0.01
+deaths                         WITH=0.000+-0.000  NO=0.033+-0.183  delta=+3333333333.3%  t=+1.00  p=0.3256  d=+0.26
+final_mirror                   WITH=0.578+-0.027  NO=0.571+-0.027  delta=-1.2%  t=-0.99  p=0.3253  d=-0.26
+final_awareness_idx            WITH=0.856+-0.097  NO=0.866+-0.090  delta=+1.1%  t=+0.39  p=0.6952  d=+0.10
+final_continuity               WITH=1.000+-0.000  NO=0.999+-0.001  delta=-0.0%  t=-1.99  p=0.0523  d=-0.51
+final_collapse_index           WITH=0.897+-0.009  NO=0.927+-0.010  delta=+3.4%  t=+12.74  p=0.0000***  d=+3.29
+final_closure_depth            WITH=2.633+-0.615  NO=2.333+-0.802  delta=-11.4%  t=-1.63  p=0.1098  d=-0.42
+awakenings                     WITH=37.733+-8.333  NO=41.167+-6.998  delta=+9.1%  t=+1.73  p=0.0894  d=+0.45
+
+Significance: * p<0.05  ** p<0.01  *** p<0.001

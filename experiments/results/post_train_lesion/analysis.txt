@@ -1,0 +1,22 @@
+========================================================================
+E7 POST-TRAINING LESION ANALYSIS
+========================================================================
+Seeds per condition: 8  |  Conditions: ['FULL', 'LESION_ALL', 'LESION_CX', 'LESION_MB']
+Train steps: 30000  |  Test steps: 8000
+
+  FULL           : pre=4.78%±0.11%  post=4.93%±0.18%  mb_w 0.0868->0.0868
+  LESION_ALL     : pre=4.78%±0.11%  post=4.77%±0.30%  mb_w 0.0868->0.0000
+  LESION_CX      : pre=4.78%±0.11%  post=5.03%±0.34%  mb_w 0.0868->0.0868
+  LESION_MB      : pre=4.78%±0.11%  post=4.80%±0.33%  mb_w 0.0868->0.0000
+
+=== KEY COMPARISON: FULL vs LESION_MB (post-training phase) ===
+  FULL:      4.93% ± 0.18%
+  LESION_MB: 4.80% ± 0.33%
+  Difference: FULL is +2.9% higher
+  t = 1.051  p = 0.3112  Cohen's d = 0.525
+  >>> NULL: MB weight growth doesn't cause behavioral advantage
+
+=== ALL PAIRWISE vs FULL (t-test) ===
+  FULL vs LESION_ALL     : delta=+3.4%  t=1.338  p=0.2021  d=0.669  ns
+  FULL vs LESION_CX      : delta=-1.9%  t=-0.710  p=0.4894  d=-0.355  ns
+  FULL vs LESION_MB      : delta=+2.9%  t=1.051  p=0.3112  d=0.525  ns

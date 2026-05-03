@@ -1,0 +1,33 @@
+============================================================================
+E5 TRAJECTORY — Time Series Analysis
+============================================================================
+Seeds: 8, time points per seed: 75
+
+=== H4 TEST: Awakening events precede mirror improvements? ===
+  lag= -3 (awake leads mirror by -3 buckets):  r=+0.053 +- 0.119  (n_seeds=8)
+  lag= -2 (awake leads mirror by -2 buckets):  r=+0.099 +- 0.077  (n_seeds=8)
+  lag= -1 (awake leads mirror by -1 buckets):  r=-0.043 +- 0.083  (n_seeds=8)
+  lag= +0 (awake leads mirror by 0 buckets):  r=+0.158 +- 0.089  (n_seeds=8)
+  lag= +1 (awake leads mirror by 1 buckets):  r=-0.146 +- 0.074  (n_seeds=8)
+  lag= +2 (awake leads mirror by 2 buckets):  r=-0.145 +- 0.093  (n_seeds=8)
+  lag= +3 (awake leads mirror by 3 buckets):  r=-0.099 +- 0.122  (n_seeds=8)
+  lag= +5 (awake leads mirror by 5 buckets):  r=-0.033 +- 0.139  (n_seeds=8)
+  lag=+10 (awake leads mirror by 10 buckets):  r=+0.041 +- 0.125  (n_seeds=8)
+
+=== Consciousness composite emergence over time ===
+(per-seed mean across time points, then mean across seeds)
+  mirror             early=0.566  late=0.575  delta=+1.5%  paired t=+2.23  p=0.0611
+  awareness_idx      early=0.743  late=0.782  delta=+5.1%  paired t=+1.37  p=0.2142
+  continuity         early=0.999  late=0.999  delta=+0.0%  paired t=+0.26  p=0.8005
+  presence           early=0.948  late=0.968  delta=+2.1%  paired t=+6.10  p=0.0005
+  collapse           early=0.740  late=0.762  delta=+3.0%  paired t=+6.37  p=0.0004
+  self_pe            early=0.137  late=0.147  delta=+7.3%  paired t=+1.56  p=0.1634
+
+=== Behavior emergence over time ===
+  eats per 200-step bucket  early=9.18  late=9.50  delta=+3.5%  paired t=+1.47  p=0.1856
+
+=== Mid-time correlation: consciousness vs behavior ===
+  awareness_idx      mean cross-seed correlation with eats: r=+0.015
+  presence           mean cross-seed correlation with eats: r=+0.015
+  collapse           mean cross-seed correlation with eats: r=-0.115
+  mirror             mean cross-seed correlation with eats: r=+0.113

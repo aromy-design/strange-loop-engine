@@ -1,0 +1,9 @@
+E7 POST-TRAINING LESION SUMMARY
+Seeds: 8, train=30000, test=8000
+
+FULL: post_rate=4.934% ± 0.178% (n=8)
+LESION_ALL: post_rate=4.770% ± 0.298% (n=8)
+LESION_CX: post_rate=5.030% ± 0.336% (n=8)
+LESION_MB: post_rate=4.795% ± 0.330% (n=8)
+
+FULL vs LESION_MB: t=1.051 p=0.3112 d=0.525

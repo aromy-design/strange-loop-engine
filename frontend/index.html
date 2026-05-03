@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Metabolic Loop — Scientific Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css" />
+  </head>
+  <body>
+    <header>
+      <h1>METABOLIC LOOP · SCIENTIFIC DASHBOARD</h1>
+      <div class="hdr-stats">
+        <span class="kv"><b>t</b><i id="t">0</i></span>
+        <span class="kv"><b>neurons</b><i id="neuron-count">—</i></span>
+        <span class="kv"><b>ms/tick</b><i id="msStep">—</i></span>
+        <span class="kv"><b>energy</b><i id="energy">—</i></span>
+        <span class="kv"><b>day/night</b><i id="light">—</i></span>
+        <span class="kv"><b>mode</b><i id="mode">—</i></span>
+        <span class="kv"><b>position</b><i id="pos">—</i></span>
+      </div>
+      <div class="hdr-ctrl">
+        <button id="btn-perturb">PERTURB</button>
+        <button id="btn-reset">RESET</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- COL 1: agent live -->
+      <section class="col">
+        <div class="card">
+          <h2>WORLD</h2>
+          <canvas id="world" width="320" height="320"></canvas>
+        </div>
+        <div class="card">
+          <h2>SPATIAL VALUE MAP</h2>
+          <canvas id="value" width="320" height="320"></canvas>
+        </div>
+        <div class="card">
+          <h2>SYNAPSE PLASTICITY (legacy field)</h2>
+          <canvas id="weights" width="320" height="320"></canvas>
+        </div>
+      </section>
+
+      <!-- COL 2: consciousness battery + meta + circuits -->
+      <section class="col">
+        <div class="card hilite">
+          <h2>CONSCIOUSNESS COMPOSITE</h2>
+          <div class="big-num">
+            <span id="composite">0.00</span>
+            <small>trust <i id="trust">0.00</i></small>
+          </div>
+          <div id="batt-bars"></div>
+        </div>
+
+        <div class="card">
+          <h2>BRAIN CIRCUITS · firing rates (spike%)</h2>
+          <table class="tbl">
+            <thead><tr><th>circuit</th><th>n</th><th>rate%</th><th>active</th></tr></thead>
+            <tbody id="circuits-tbl"></tbody>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>META-LOOP (H1) · self-modeling errors</h2>
+          <table class="tbl">
+            <tr><th>closure depth</th><td id="depth">—</td></tr>
+            <tr><th>L1 err</th><td id="err1">—</td></tr>
+            <tr><th>L2 err</th><td id="err2">—</td></tr>
+            <tr><th>L3 err</th><td id="err3">—</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>NEUROMODULATORS</h2>
+          <table class="tbl">
+            <tr><th>dopamine (DA)</th><td id="da">—</td><td><div class="bar"><div id="bda"></div></div></td></tr>
+            <tr><th>serotonin (5HT)</th><td id="ht">—</td><td><div class="bar"><div id="bht"></div></div></td></tr>
+            <tr><th>norepinephrine (NE)</th><td id="ne">—</td><td><div class="bar"><div id="bne"></div></div></td></tr>
+          </table>
+        </div>
+      </section>
+
+      <!-- COL 3: more metrics, sparklines, tests -->
+      <section class="col">
+        <div class="card">
+          <h2>CORE METRICS · live sparklines</h2>
+          <div class="spark-row"><span>energy</span><canvas id="sp-energy" width="200" height="30"></canvas><i id="sp-energy-v">—</i></div>
+          <div class="spark-row"><span>self-pred err</span><canvas id="sp-selfpe" width="200" height="30"></canvas><i id="sp-selfpe-v">—</i></div>
+          <div class="spark-row"><span>world-pred err</span><canvas id="sp-worldpe" width="200" height="30"></canvas><i id="sp-worldpe-v">—</i></div>
+          <div class="spark-row"><span>mirror score</span><canvas id="sp-mirror" width="200" height="30"></canvas><i id="sp-mirror-v">—</i></div>
+          <div class="spark-row"><span>awareness idx</span><canvas id="sp-aware" width="200" height="30"></canvas><i id="sp-aware-v">—</i></div>
+          <div class="spark-row"><span>collapse idx</span><canvas id="sp-collapse" width="200" height="30"></canvas><i id="sp-collapse-v">—</i></div>
+          <div class="spark-row"><span>continuity</span><canvas id="sp-cont" width="200" height="30"></canvas><i id="sp-cont-v">—</i></div>
+          <div class="spark-row"><span>presence</span><canvas id="sp-presence" width="200" height="30"></canvas><i id="sp-presence-v">—</i></div>
+        </div>
+
+        <div class="card">
+          <h2>BEHAVIORAL CUMULATIVE</h2>
+          <table class="tbl">
+            <tr><th>eats</th><td id="cum-eats">0</td></tr>
+            <tr><th>danger steps</th><td id="cum-danger">0</td></tr>
+            <tr><th>shelter visits</th><td id="cum-shelter">0</td></tr>
+            <tr><th>sleep steps</th><td id="cum-sleep">0</td></tr>
+            <tr><th>deaths</th><td id="cum-deaths">0</td></tr>
+            <tr><th>awakenings</th><td id="cum-wake">0</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>EVENT LOG · self-surprise / dissociation / awakening</h2>
+          <div id="event-log" class="event-log"></div>
+        </div>
+
+        <div class="card">
+          <h2>EMERGENT VOICE · symbols (last 32)</h2>
+          <div id="symbols"></div>
+        </div>
+      </section>
+
+      <!-- COL 4: experiments table -->
+      <section class="col">
+        <div class="card">
+          <h2>EXPERIMENT RESULTS · load CSV</h2>
+          <p class="caption">load summary.csv from <code>experiments/results/{name}/summary.csv</code></p>
+          <select id="exp-select">
+            <option value="lesion">E1 lesion</option>
+            <option value="sleep">E2 sleep</option>
+            <option value="sparsity">E3 sparsity</option>
+          </select>
+          <button id="btn-load-exp">LOAD</button>
+          <div id="exp-status"></div>
+          <div id="exp-table"></div>
+        </div>
+
+        <div class="card">
+          <h2>WORKSPACE IGNITIONS · last 12</h2>
+          <div id="ign"></div>
+        </div>
+
+        <div class="card">
+          <h2>AWARENESS EVENT TOTALS</h2>
+          <table class="tbl">
+            <tr><th>SELF_SURPRISE</th><td id="aw-self">0</td></tr>
+            <tr><th>WORLD_SURPRISE</th><td id="aw-world">0</td></tr>
+            <tr><th>DISSOCIATION</th><td id="aw-diss">0</td></tr>
+            <tr><th>awareness idx</th><td id="aw-idx">0.00</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>MIRROR TEST · self-recognition</h2>
+          <table class="tbl">
+            <tr><th>recognition</th><td id="mirror">—</td></tr>
+            <tr><th>runs</th><td id="mirror-runs">0</td></tr>
+          </table>
+        </div>
+
+        <div class="card">
+          <h2>VITAL · learning curve</h2>
+          <canvas id="learn-cv" width="320" height="120"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/dashboard.js"></script>
+  </body>
+</html>

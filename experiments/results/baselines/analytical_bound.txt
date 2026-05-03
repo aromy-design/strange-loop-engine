@@ -1,0 +1,8 @@
+=== ANALYTICAL CLOSED-FORM BOUND ===
+N_grid: 256
+N_food: 6
+N_danger: 8
+p_on_food_stationary_uniform: 0.0234375
+p_movement_per_action: 0.6666666666666666
+eat_rate_upper_bound_pct: 2.34375
+note: Upper bound for ergodic uniform-coverage policies. Above implies learned bias.

@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Large data files (download separately, not in repo)
+data/flyem/*.tar.gz
+data/flyem/exported-traced-adjacencies-v1.2/
+
+# Logs
+*.log
+experiments/*_log.txt
+nohup.out
+
+# Generated results CSVs (preserve in Zenodo, not git)
+# Comment out the next line if you want to track results too
+# experiments/results/
+
+# Local config / secrets
+.env
+*.key
