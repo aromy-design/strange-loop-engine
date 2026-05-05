@@ -28,12 +28,20 @@ data/flyem/exported-traced-adjacencies-v1.2/
 # Logs
 *.log
 experiments/*_log.txt
+experiments/results/*/run.log
+experiments/results/*/run_n8.log
 nohup.out
 
-# Generated results CSVs (preserve in Zenodo, not git)
-# Comment out the next line if you want to track results too
-# experiments/results/
+# Backup CSVs (only the canonical results.csv goes in repo)
+experiments/results/*/results_pilot_*.csv
 
 # Local config / secrets
 .env
 *.key
+
+# Claude Code internal (not for public repo)
+.claude/
+
+# OneDrive sync artifacts
+.tmp.driveupload/
+*.crdownload
