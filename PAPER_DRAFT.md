@@ -2,7 +2,7 @@
 
 **Authors**: Emanuele Cerni
 **Pre-registration**: OSF, DOI [10.17605/OSF.IO/397GJ](https://doi.org/10.17605/OSF.IO/397GJ) (CC0 1.0)
-**Code and data**: [TODO: GitHub URL after first push] (open-source under [TODO: license])
+**Code and data**: https://github.com/aromy-design/strange-loop-engine (open-source under MIT License)
 
 ---
 
@@ -747,8 +747,7 @@ synaptic plasticity. *Neural Computation*, 29(5), 1229-1262.
 ### 8. Data and code availability
 
 All code, simulation scripts, raw CSV outputs, and analysis scripts will be
-released as a public open-source repository at [TODO: GitHub URL] under the
-[TODO: license] license. The pre-registration document, locked before E7v2
+released as a public open-source repository at [TODO: GitHub URL] under the MIT License. The pre-registration document, locked before E7v2
 data collection, is permanently available on the Open Science Framework at
 DOI [10.17605/OSF.IO/397GJ](https://doi.org/10.17605/OSF.IO/397GJ) under CC0
 1.0. The Janelia FlyEM hemibrain v1.2.1 dataset used for the connectome
