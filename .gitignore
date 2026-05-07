@@ -41,6 +41,13 @@ experiments/results/*/results_pilot_*.csv
 
 # Claude Code internal (not for public repo)
 .claude/
+CLAUDE.md
+CONTINUE.md
+RESEARCH.md
+SCALE.md
+AUDIT.md
+PAPER.md
+PRE_REGISTRATION.md
 
 # OneDrive sync artifacts
 .tmp.driveupload/
