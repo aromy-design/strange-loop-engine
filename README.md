@@ -131,8 +131,3 @@ transfer in an embodied insect-brain agent with the real Drosophila
 connectome. [TODO: venue and DOI at acceptance].
 Pre-registration: OSF DOI 10.17605/OSF.IO/397GJ.
 ```
-
-## Contact
-
-Emanuele Cerni — [TODO: contact email if you want one in the public repo,
-or leave only the OSF profile link].
